@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' href='https://unpkg.com/leaflet/dist/leaflet.css' />
+    <script src='https://unpkg.com/leaflet/dist/leaflet.js'></script>
+</head>
+
+<body>
+    <div id='map' style='height: 100vh;'></div>
+    <script>
+        var map = L.map('map').setView([0, 0], 2);
+
+        // Add a marker to the map
+        var marker = L.marker([10.7928885, 106.6503094]).addTo(map);
+
+        // Get the coordinates of the marker
+        var markerLatLng = marker.getLatLng();
+        var markerLat = markerLatLng.lat;
+        var markerLng = markerLatLng.lng;
+
+        console.log('Marker Latitude:', markerLat);
+        console.log('Marker Longitude:', markerLng);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map);
+    </script>
+</body>
+
+</html>
